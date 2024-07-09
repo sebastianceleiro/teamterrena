@@ -8,6 +8,9 @@ const btnfiltro = document.getElementById("filtroBtn");
 const modalFiltro = document.getElementById("FiltroModal");
 const filtroForm = document.getElementById("filtroForm");
 const tableBody = document.querySelector("table tbody");
+const btnLinks = document.getElementById("linksUtiles")
+const linksUtiles = document.getElementById("LinksUtiles")
+
 
 // Mostrar el modal de añadir tarea cuando se hace clic en el botón
 btn.onclick = function() {
@@ -17,6 +20,11 @@ btn.onclick = function() {
 // Mostrar el modal de filtros cuando se hace clic en el botón de filtros
 btnfiltro.onclick = function() {
     modalFiltro.style.display = "block";
+}
+
+// Mostrar el modal de filtros cuando se hace clic en el botón de filtros
+btnLinks.onclick = function() {
+    linksUtiles.style.display = "block";
 }
 
 // Cerrar el modal de añadir tarea cuando se hace clic en la "x"
@@ -29,6 +37,11 @@ modalFiltro.querySelector(".close").onclick = function() {
     modalFiltro.style.display = "none";
 }
 
+// Cerrar el modal de filtros cuando se hace clic en la "x"
+modalFiltro.querySelector(".close").onclick = function() {
+    linksUtiles.style.display = "none";
+}
+
 // Cerrar el modal de añadir tarea o filtros cuando se hace clic fuera del modal
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -36,6 +49,9 @@ window.onclick = function(event) {
     }
     if (event.target == modalFiltro) {
         modalFiltro.style.display = "none";
+    }
+    if (event.target == linksUtiles) {
+        linksUtiles.style.display = "none";
     }
 }
 
