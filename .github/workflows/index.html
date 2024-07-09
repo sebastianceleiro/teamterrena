@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado de temas - Team Terrena</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Estado de temas - Team Terrena</h1>
+        <button id="addTaskBtn">Añadir Nueva Tarea</button>
+        <button id="filtroBtn">Filtrar temas</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tarea</th>
+                    <th>Responsable</th>
+                    <th>Estado</th>
+                    <th>Comentarios</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <!-- Modal -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Añadir/Editar Tarea</h2>
+            <form id="taskForm">
+                <label for="taskName">Tarea:</label>
+                <input type="text" id="taskName" name="taskName" required>
+                <label for="taskResponsible">Responsable:</label>
+                <select id="taskResponsible" name="taskResponsible" required>
+                    <option value="Seba">Seba</option>
+                    <option value="Geri">Geri</option>
+                    <option value="Jai">Jai</option>
+                </select>
+                <label for="taskStatus">Estado:</label>
+                <select id="taskStatus" name="taskStatus" required>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Enproceso">En Proceso</option>
+                    <option value="Pausado">Pausado</option>
+                    <option value="Completo">Completado</option>
+                </select>
+                <label for="taskcomments">Comentarios:</label>
+                <input type="text" id="taskcomments" name="taskcomments">
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+        </div>
+        <div id="FiltroModal" class="modalfiltro">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Filtrar Tareas</h2>
+                <form id="filtroForm">
+                    <label for="filtroEstado">Filtrar por Estado:</label>
+                    <select id="filtroEstado" name="filtroEstado">
+                        <option value="">Todos</option>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Enproceso">En Proceso</option>
+                        <option value="Pausado">Pausado</option>
+                        <option value="Completo">Completado</option>
+                    </select>
+                    <label for="filtroResponsable">Filtrar por Responsable:</label>
+                    <select id="filtroResponsable" name="filtroResponsable">
+                        <option value="">Todos</option>
+                        <option value="Seba">Seba</option>
+                        <option value="Geri">Geri</option>
+                        <option value="Jai">Jai</option>
+                    </select>
+                    <button type="button" id="aplicarFiltroBtn">Aplicar Filtro</button>
+                </form>
+            </div>
+                </div>
+        <script src="script.js" type="module"></script>
+</body>
